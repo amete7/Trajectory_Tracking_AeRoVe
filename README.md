@@ -1,11 +1,20 @@
-# min_snap
+# Trajectory_Tracking_AeRoVe
 
-fixed_time_ms.py is the implementation without optimal time segments
+## Trajectory Generation
+We used minimum snap trajectory generation to generate a smooth 8 degree polynomial trajectory passing through a sequence of waypoints<br>
+Initially we implemented a [trajectory with fixed time segments](https://github.com/atharva7am/Trajectory_Tracking_AeRoVe/blob/main/min_snap_trajectory_generator/fixed_time_ms.py)<br>
+Then we improved it by computing [optimal time segments](https://github.com/atharva7am/Trajectory_Tracking_AeRoVe/blob/main/min_snap_trajectory_generator/min_snap_time_opt.py), where gradient descent is implemented to optimized time for each segment.<br>
+We further modified the formulation to incorporate acceleration and velocity constraints to generate [constrained time optimized trajectory](https://github.com/atharva7am/Trajectory_Tracking_AeRoVe/blob/main/min_snap_trajectory_generator/constrained_time_opt.py)<br>
+<img src="/results/time_optimal_traj.png" width="50%" height="50%"/><br>
 
-min_snap_time_opt.py is the implementation with optimal time segments, where gradient descent is implemented manually to find optimal time segments
+## PID based Controller
+We implemented high-level position controller (lateral acceleration as control) and low level attitude controller (angular rates as control)<br>
+<img src="/results/pid_tracking_1.jpeg" width="50%" height="50%"/> <img src="/results/pid_tracking_2.jpeg" width="40%" height="40%"/><br>
 
-constrained_time_opt.py is the implementation of optimal time segments with improved gradient descent using scipy library
 
-Go throught all of the above 3 files in given order and try to understand the concept, the implementation and the structure of the code. 
+## Integral Sliding Mode Controller
+To mitigate the external disturbances cause by wind we implemented sliding mode control based controller<br>
+<img src="/results/pid_with_disturbances.jpeg" width="40%" height="10%"/> <img src="/results/smc_with_disturbances.jpeg" width="40%" height="40%"/><br>
 
-Try out the code by yourself, for this, give the x, y, z position arrays and avegare velocity in the main function and a beautiful trajectory is generated.
+## Performance Validation on Hardware
+<img src="/results/hardware_implementation.gif"/>
