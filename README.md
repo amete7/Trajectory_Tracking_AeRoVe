@@ -14,7 +14,7 @@ We implemented high-level position controller (lateral acceleration as control) 
 
 ## Integral Sliding Mode Controller
 To mitigate the external disturbances cause by wind we implemented sliding mode control based controller<br>
-<img src="/results/pid_with_disturbances.jpeg" width="30%" height="30%"/> <img src="/results/smc_with_disturbances.jpeg" width="30%" height="30%"/><br>
+<img src="/results/pid_with_disturbances.jpeg" width="40%" height="40%"/> <img src="/results/smc_with_disturbances.jpeg" width="40%" height="40%"/><br>
 PID with external disturbances  vs   Sliding Mode with external disturbance
 
 ## Performance Validation on Hardware
