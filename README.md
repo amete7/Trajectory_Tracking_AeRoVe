@@ -18,4 +18,4 @@ To mitigate the external disturbances cause by wind we implemented sliding mode 
 PID with external disturbances  vs   Sliding Mode with external disturbance
 
 ## Performance Validation on Hardware
-<img src="/results/hardware_implementation.gif" width="120%" height="120%"//>
+<img src="/results/hardware_implementation.gif" width="120%" height="120%"/>
